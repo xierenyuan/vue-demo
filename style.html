@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .green {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body id="app">
+<p v-bind:style="style">hi i am vue js</p>
+<div v-bind:class="[classA,classB]"></div>
+<div v-bind:class="[classA]"></div>
+<script type="text/javascript" src="bower_components/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            style: {
+                color: 'red',
+                fontSize: '13px'
+            },
+            classA: 'red',
+            classB: 'green'
+        }
+    });
+</script>
+</body>
+</html>
