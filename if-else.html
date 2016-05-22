@@ -2,14 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>if else list event</title>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-else>Ok</h1>
+    <ul>
+        <template v-for="item of list" track-by="$index">
+            <li>{{ item.text }}-INDEX:{{ $index }}</li>
+            <li>{{ msg }}</li>
+        </template>
+    </ul>
+    <input type="text" v-model="vM">
+    <input type="submit" @keyup.enter="sumbit">
+</div>
 <script type="text/javascript" src="bower_components/vue/dist/vue.min.js"></script>
 <script type="text/javascript">
-    var vm=new Vue({
-        el:'#app'
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            ok: true,
+            msg: 'Hello',
+            list: [
+                {text: 'item text 1'},
+                {text: 'item text 2'},
+                {text: 'item text 3'}
+            ]
+        },
+        methods: {
+            sumbit: function () {
+                alert(this.vM);
+            }
+        }
     });
 </script>
 </body>

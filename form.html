@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body id="app">
+<table>
+    <tr>
+        <td>Message</td>
+        <td><input type="text" v-model="Form.message" placeholder="message .."></td>
+    </tr>
+    <tr>
+        <td>Code</td>
+        <td>
+            <input type="checkbox" v-model="Form.code" value="net" placeholder="Net ..">Net
+            <input type="checkbox" v-model="Form.code" value="java" placeholder="Net ..">Java
+            <input type="checkbox" v-model="Form.code" value="javascript" placeholder="Net ..">JavaScript
+        </td>
+    </tr>
+    <tr>
+        <td>Sex</td>
+        <td>
+            <input type="radio" v-model="Form.sex" v-bind:value="1">男
+            <input type="radio" v-model="Form.sex" v-bind:value="2">女
+            <input type="radio" v-model="Form.sex" v-bind:value="3">其它
+        </td>
+    </tr>
+    <tr>
+        <td>Selected</td>
+        <td>
+            <select v-model="Form.selected">
+                <option value="A1" selected>A</option>
+                <option value="B1">B</option>
+                <option value="C1">C</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button @click="submit">提交</button>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript" src="bower_components/vue/dist/vue.min.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            Form: {
+                code: []
+            }
+        },
+        methods: {
+            submit: function () {
+                console.log('呵呵哒', this.Form);
+            }
+        }
+    });
+</script>
+</body>
+</html>
